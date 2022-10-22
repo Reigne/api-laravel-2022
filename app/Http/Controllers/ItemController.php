@@ -133,16 +133,16 @@ class ItemController extends Controller
         //     $file->move($destinationPath,$fileName);
         // }
 
-        $input = $request->all();
-        $files = $request->file('uploads');
-        $input['imagePath'] = 'images/'.$files->getClientOriginalName();
-        // $item->save();
+        // $input = $request->all();
+        // $files = $request->file('uploads');
+        // $input['imagePath'] = 'images/'.$files->getClientOriginalName();
+        // // $item->save();
         
-        $items = $items->update($input);
-        Storage::put('/public/images/'.$files->getClientOriginalName(),file_get_contents($files));
+        // $items = $items->update($input);
+        // Storage::put('/public/images/'.$files->getClientOriginalName(),file_get_contents($files));
 
-        $items = Item::find($id);
-        return response()->json($items);
+        // $items = Item::find($id);
+        // return response()->json($items);
     }
 
     /**
