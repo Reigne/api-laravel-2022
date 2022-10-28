@@ -86,7 +86,7 @@
         </div>
         <div class="modal-body">
             <form id="ayform" method="PUT" action="#" enctype="multipart/form-data">
-                <input type="hidden">
+                {{-- <input type="hidden"> --}}
                 <div class="form-group">
                     <label for="eeitem_id" class="control-label">Item id</label>
                     <input type="text" class="form-control" id="eeitem_id" name="item_id" >
@@ -111,19 +111,28 @@
                     <input type="text" class="form-control " id="eetitle" name="title" >
                 </div>
             
-                <div class="form-group"> 
+                {{-- <div class="form-group"> 
                     <label for="eeimagePath" class="control-label"><i class="fa-regular fa-image"></i>  Image</label>
-                    <input type="file" class="form-control" id="imagePath" name="uploads" >
+                    <input type="file" class="form-control" id="eeimagePath" name="imagePath" >
+                </div> --}}
+
+                <div class="form-group">
+                    <label for="eeimagePath" class="control-label"><i class="fa-regular fa-image"></i>  Image</label>
+                    <input type="file" class="form-control" id="eeimagePath" name="uploads">
                 </div>
-            </form>
+
+                
+            
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-bs-dismiss="modal"><i class="fa-sharp fa-solid fa-circle-xmark"></i> Close</button>
             <button id="updatebtnItem" type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Update</button>
         </div>
+    
     </div>
 </div>
 </div>
+</form>
 {{-- end of edit --}}
 
 @endsection

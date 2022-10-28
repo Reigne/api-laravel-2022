@@ -20,12 +20,36 @@ use Illuminate\Database\Eloquent\Model;
 //     public $timestamps = false;
 // }
 
+
+// class Customer extends Model
+// {
+//     use HasFactory;
+//     public $timestamps = false;
+//     public $primaryKey = 'customer_id';
+
+//     protected $guarded = ['customer_id'];
+//     protected $fillable = ['title', 'fname','lname','addressline','town', 'zipcode','phone','creditlimit','level'];
+// }
+
+
+//Created at October 28, 2022
 class Customer extends Model
 {
     use HasFactory;
-    public $timestamps = false;
+    public $table = 'customers';
     public $primaryKey = 'customer_id';
-
+    public $timestamps = false;
     protected $guarded = ['customer_id'];
-    protected $fillable = ['title', 'fname','lname','addressline','town', 'zipcode','phone','creditlimit','level'];
+    
+
+    protected $fillable = ['fname','lname',
+        'title','addressline','town','zipcode',
+        'phone','email','user_id','level','creditlimit'
+    ];
+
+     public function orders(){
+
+        return $this->hasMany('App\Models\Order','customer_id');
+
+    }
 }

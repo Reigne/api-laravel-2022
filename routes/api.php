@@ -29,3 +29,9 @@ Route::resource('item', 'ItemController');
 //     'as' => 'getItems'
 //     ]);
 Route::view('/item-index', 'item.index');
+Route::view('/shop', 'shop.index');
+
+Route::post('/item/checkout',[
+    'uses' => 'ItemController@postCheckout',
+    'as' => 'checkout'
+]);

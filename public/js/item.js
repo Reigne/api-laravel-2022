@@ -31,12 +31,12 @@ $(document).ready(function () {
             {data: null,
                 render: function (data, type, row) {
                     return "<a href='#' class='editBtn id='editbtn' data-id=" +
-                        data.item_id + "><i class='fa-solid fa-pen-to-square' aria-hidden='true' style='font-size:40px' ></i></a>";
+                        data.item_id + "><i class='fa-solid fa-pen-to-square' aria-hidden='true' style='font-size:30px' ></i></a>";
                 },
             },
             {data: null,
                 render: function (data, type, row) {
-                    return "<a href='#' class='deletebtn' data-id=" + data.item_id + "><i class='fa-sharp fa-solid fa-trash' style='font-size:40px; color:red'></a></i>";
+                    return "<a href='#' class='deletebtn' data-id=" + data.item_id + "><i class='fa-sharp fa-solid fa-trash' style='font-size:30px; color:red'></a></i>";
                 },
             },
         ]
@@ -98,7 +98,9 @@ $(document).ready(function () {
                    $("#eecost_price").val(data.cost_price);
                    $("#eesell_price").val(data.sell_price);
                    $("#eetitle").val(data.title);
-                   $("#eeimagePath").val(data.imagePath);
+                   $("#eeimagePath").html(
+                    `<img src="storage/images/${data.uploads}" width="100" class="img-fluid img-thumbnail">`);
+                //    .val(data.imagePath);
                 },
                 error: function(){
                     console.log('AJAX load did not work');
@@ -113,11 +115,11 @@ $(document).ready(function () {
             //var data = $("#updateItemform").serialize();
             console.log(data);
 
-            var table =$('#itable').DataTable();
+            var table = $('#itable').DataTable();
             var cRow = $("tr td:contains(" + id + ")").closest('tr');
-            var data =$("#ayform").serialize();
+            var data = $("#ayform").serialize();
 
-            $.ajax({
+            $.ajax({    
                 type: "PUT",
                 url: "api/item/"+ id,
                 data: data,

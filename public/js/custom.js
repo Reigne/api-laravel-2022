@@ -68,7 +68,7 @@ $(document).ready(function () {
                 tr.append($("<td>").html(data.cost_price));
                 tr.append($("<td>").html(data.sell_price));
                 tr.append($("<td>").html(data.title));
-                tr.append($("<td>").html(data.img_path));
+                tr.append($("<td>").html(data.imagePath));
                 tr.append("<td><a href='#' data-bs-toggle='modal' data-bs-target='#editItemModal' id='editbtnitem' data-id=" + id + "><i class='fa fa-pencil' aria-hidden='true' style='font-size:24px' ></a></i></td>"
                 );
 
@@ -104,7 +104,7 @@ $(document).ready(function () {
                    $("#eecost_price").val(data.cost_price);
                    $("#eesell_price").val(data.sell_price);
                    $("#eetitle").val(data.title);
-                   $("#eeimagePath").val(data.img_path);
+                   $("#eeimagePath").val(data.imagePath);
 
                 },
                 error: function(){

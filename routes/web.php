@@ -28,3 +28,8 @@ Route::resource('item', 'ItemController');
 //     ]);
 
 Route::view('/item', 'item.index');
+Route::view('/shop', 'shop.index');
+Route::post('/item/checkout',[
+    'uses' => 'ItemController@postCheckout',
+    'as' => 'checkout'
+]);
