@@ -1,11 +1,13 @@
 @extends('layouts.shop')
 
 @section('body')
+<div class="container-fluid">
+  <div class="p-4 py-md-5">
 <h1>Your Shopping Cart</h1>
     <div id="cart-container">
       <div id="cart">
-        <i class="fa fa-shopping-cart fa-2x openCloseCart" aria-hidden="true"></i>
-        <button id="emptyCart">Empty Cart</button>
+        <button class="btn btn-primary btn-sm openCloseCart" aria-hidden="true">Open Cart <span class="fa fa-shopping-cart"></span></button>
+        <button class="btn btn-danger btn-sm" id="emptyCart">Empty Cart</button>
       </div>
       <span id="itemCount"></span>
     </div>
@@ -32,4 +34,10 @@
   	
   </div>
 
+  
+
+    </div>
+  </div>
+
+  
 @endsection

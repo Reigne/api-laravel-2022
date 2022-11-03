@@ -33,3 +33,5 @@ Route::post('/item/checkout',[
     'uses' => 'ItemController@postCheckout',
     'as' => 'checkout'
 ]);
+
+Route::view('/dashboard','dashboard.index');
